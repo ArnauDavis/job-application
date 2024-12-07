@@ -63,8 +63,16 @@ textarea {
 
 .work-entry {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
+}
+
+.current-job-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 10px;
+
 }
 
 .work-entry input[type="text"],
