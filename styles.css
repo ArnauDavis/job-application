@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: 490px;
+    margin-top: 510px;
 }
 
 .container {
@@ -63,12 +63,12 @@ textarea {
 
 .work-entry {
     display: flex;
-    gap: 20px;
+    gap: 5px;
     align-items: center;
 }
 
 .current-job-label {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 5px;
     margin-left: 10px;
@@ -77,7 +77,7 @@ textarea {
 
 .work-entry input[type="text"],
 .work-entry input[type="date"] {
-    width: 30%;
+    width: 25%;
 }
 
 button {
