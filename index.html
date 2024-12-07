@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job application</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Job Application</h1>
+        <form action="#" method="post" class="application-form">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="address">Address</label>
+            <div id="address">
+                <label for="street">Street:</label>
+                <input type="text" id="street" name="street" placeholder="Enter your street address" required>
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state" placeholder="Enter your state" required>
+
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zip" name="zip" placeholder="Enter your zip code" required>
+
+                <div class="housing-status">
+                    <input type="radio" id="unhoused" name="housing-status" value="unhoused">
+                    <label for="unhoused">I am currently unhoused</label>
+                </div>
+            </div>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="experience">Past Work Experience:</label>
+            <div id="work-experience">
+                <div class="work-entry">
+                    <input type="text" placeholder="Company" name="company-1" class="company-name" required>
+                    <input type="date" name="start-date-1" class="start-date" required>
+                    <input type="date" name="end-date-1" class="end-date">
+                    <label>
+                        <input type="checkbox" name="current-job-1"> This is my current job
+                    </label>
+                </div>
+                <div class="work-entry">
+                    <input type="text" placeholder="Company" name="company-2" class="company-name">
+                    <input type="date" name="start-date-2" class="start-date">
+                    <input type="date" name="end-date-2" class="end-date">
+                    <label>
+                        <input type="checkbox" name="current-job-2"> This is my current job
+                    </label>
+                </div>
+                <div class="work-entry">
+                    <input type="text" placeholder="Company" name="company-3" class="company-name">
+                    <input type="date" name="start-date-3" class="start-date">
+                    <input type="date" name="end-date-3" class="end-date">
+                    <label>
+                        <input type="checkbox" name="current-job-3"> This is my current job
+                    </label>
+                </div>
+            </div>
+
+            <label for="references">References (Name, Relationship, Phone Number):</label>
+            <div id="references">
+                <div class="reference-entry">
+                    <input type="text" placeholder="Reference Name" name="reference-name-1" required>
+                    <input type="text" placeholder="Relationship" name="reference-relation-1" required>
+                    <input type="tel" placeholder="Phone Number" name="reference-phone-1" required>
+                </div>
+                <div class="reference-entry">
+                    <input type="text" placeholder="Reference Name" name="reference-name-2">
+                    <input type="text" placeholder="Relationship" name="reference-relation-2">
+                    <input type="tel" placeholder="Phone Number" name="reference-phone-2">
+                </div>
+                <div class="reference-entry">
+                    <input type="text" placeholder="Reference Name" name="reference-name-3">
+                    <input type="text" placeholder="Relationship" name="reference-relation-3">
+                    <input type="tel" placeholder="Phone Number" name="reference-phone-3">
+                </div>
+            </div>
+
+            <label for="question1">1. What motivates you to apply for this position and how does it align with your personal or professional goals?</label>
+            <textarea id="question1" name="question1" rows="3" required></textarea>
+
+            <label for="question2">2. Describe a challenge you've faced in your professional or personal life and how you overcame it.</label>
+            <textarea id="question2" name="question2" rows="3" required></textarea>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+</body>
+</html>
