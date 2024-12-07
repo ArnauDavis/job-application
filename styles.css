@@ -41,7 +41,8 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="date"],
-textarea {
+textarea,
+select {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
@@ -58,15 +59,6 @@ textarea {
     display: block;
     width: 100%;
     margin-bottom: 10px;
-}
-
-.housing-status {
-    display: flex;
-    align-items: center;
-}
-
-.housing-status input[type="radio"] {
-    margin-right: 10px;
 }
 
 .work-entry {
@@ -108,7 +100,7 @@ button:focus {
     width: 30%;
 }
 
-textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="date"]:focus {
+textarea:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="date"]:focus, select:focus {
     border-color: #4CAF50;
     outline: none;
 }

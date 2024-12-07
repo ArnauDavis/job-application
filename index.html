@@ -25,21 +25,23 @@
             <label for="address">Address</label>
             <div id="address">
                 <label for="street">Street:</label>
-                <input type="text" id="street" name="street" placeholder="Enter your street address" required>
+                <input type="text" id="street" name="street" placeholder="Enter your street address">
 
                 <label for="city">City:</label>
-                <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                <input type="text" id="city" name="city" placeholder="Enter your city">
 
                 <label for="state">State:</label>
-                <input type="text" id="state" name="state" placeholder="Enter your state" required>
+                <input type="text" id="state" name="state" placeholder="Enter your state">
 
                 <label for="zip">Zip Code:</label>
-                <input type="text" id="zip" name="zip" placeholder="Enter your zip code" required>
+                <input type="text" id="zip" name="zip" placeholder="Enter your zip code">
 
-                <div class="housing-status">
-                    <input type="radio" id="unhoused" name="housing-status" value="unhoused">
-                    <label for="unhoused">I am currently unhoused</label>
-                </div>
+                <label for="unhoused">Are you currently unhoused?</label>
+                <select id="unhoused" name="unhoused" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
             </div>
 
             <label for="dob">Date of Birth:</label>
