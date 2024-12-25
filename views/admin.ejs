@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Job Applications</title>
+</head>
+<body>
+    <h1>All Job Applications</h1>
+    
+    <!-- Table to display all applications -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+                <th>Unhoused</th>
+                <th>Date of Birth</th>
+                <th>Work Experience</th>
+                <th>References</th>
+                <th>Motivation Question</th>
+                <th>Challenge Question</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% applications.forEach(application => { %>
+                <tr>
+                    <td><%= application.firstName %></td>
+                    <td><%= application.lastName %></td>
+                    <td><%= application.email %></td>
+                    <td><%= application.phone %></td>
+                    <td><%= application.street %></td>
+                    <td><%= application.city %></td>
+                    <td><%= application.state %></td>
+                    <td><%= application.zip %></td>
+                    <td><%= application.unhoused %></td>
+                    <td><%= application.dob %></td>
+                    <td><%= application.workExperience %></td>
+                    <td><%= application.references %></td>
+                    <td><%= application.question1 %></td>
+                    <td><%= application.question2 %></td>
+                    <td>
+                        <!-- Delete Button -->
+                        <form action="/delete/<%= application._id %>" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <br>
+    <form action="/download" method="GET">
+        <button type="submit">Download All Applications as Excel</button>
+    </form>
+</body>
+</html>
