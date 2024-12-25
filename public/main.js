@@ -1,5 +1,5 @@
 //capturing values from form
-
+/*
 let firstName = document.querySelector('#firstName').value
 let lastName = document.querySelector('#lastName').value
 let email = document.querySelector('#email').value
@@ -19,3 +19,4 @@ let  = document.querySelector('').value
 let  = document.querySelector('').value
 let  = document.querySelector('').value
 let  = document.querySelector('').value
+*/

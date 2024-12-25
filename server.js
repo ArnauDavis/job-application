@@ -4,6 +4,7 @@ const app = express()
 
 
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.urlencoded({ extended: true }))
 
 
 app.get('/', (req,res) => {
@@ -18,6 +19,7 @@ app.listen(3000, function() {
 })
 
 
-app.post('#',(req,res) => {
+app.post('/submit',(req,res) => {
     console.log(req.body)
+    
 })
