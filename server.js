@@ -17,8 +17,7 @@ app.listen(3000, function() {
     console.log('listening on 3000')
 })
 
-/*
-app.post('',(req,res) => {
 
+app.post('#',(req,res) => {
+    console.log(req.body)
 })
-*/
