@@ -4,62 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Job Applications</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>All Job Applications</h1>
-    
-    <!-- Table to display all applications -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Street</th>
-                <th>City</th>
-                <th>State</th>
-                <th>Zip Code</th>
-                <th>Unhoused</th>
-                <th>Date of Birth</th>
-                <th>Work Experience</th>
-                <th>References</th>
-                <th>Motivation Question</th>
-                <th>Challenge Question</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% applications.forEach(application => { %>
-                <tr>
-                    <td><%= application.firstName %></td>
-                    <td><%= application.lastName %></td>
-                    <td><%= application.email %></td>
-                    <td><%= application.phone %></td>
-                    <td><%= application.street %></td>
-                    <td><%= application.city %></td>
-                    <td><%= application.state %></td>
-                    <td><%= application.zip %></td>
-                    <td><%= application.unhoused %></td>
-                    <td><%= application.dob %></td>
-                    <td><%= application.workExperience %></td>
-                    <td><%= application.references %></td>
-                    <td><%= application.question1 %></td>
-                    <td><%= application.question2 %></td>
-                    <td>
-                        <!-- Delete Button -->
-                        <form action="/delete/<%= application._id %>" method="POST">
-                            <button type="submit">Delete</button>
-                        </form>
-                    </td>
-                </tr>
-            <% }) %>
-        </tbody>
-    </table>
+    <div class="container">
+        <h1>All Job Applications</h1>
+        <!-- Download Excel Button -->
+        <form action="/export" method="GET">
+            <button type="submit">Download All Applications as Excel</button>
+        </form>
 
-    <br>
-    <form action="/download" method="GET">
-        <button type="submit">Download All Applications as Excel</button>
-    </form>
+        <!-- Table to display all applications -->
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Street</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip Code</th>
+                    <th>Unhoused</th>
+                    <th>Date of Birth</th>
+                    <th>Work Experience</th>
+                    <th>References</th>
+                    <th>Motivation Question</th>
+                    <th>Challenge Question</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% applications.forEach(application => { %>
+                    <tr>
+                        <td><%= application.firstName %></td>
+                        <td><%= application.lastName %></td>
+                        <td><%= application.email %></td>
+                        <td><%= application.phone %></td>
+                        <td><%= application.street %></td>
+                        <td><%= application.city %></td>
+                        <td><%= application.state %></td>
+                        <td><%= application.zip %></td>
+                        <td><%= application.unhoused %></td>
+                        <td><%= application.dob %></td>
+
+                        <!-- Work Experience -->
+                        <td>
+                            <div>
+                                <% if (application.workExperience && application.workExperience.length > 0) { %>
+                                    <p><strong>Company:</strong> <%= application.workExperience[0].company %></p>
+                                    <p><strong>Start Date:</strong> <%= application.workExperience[0].startDate %></p>
+                                    <p><strong>End Date:</strong> <%= application.workExperience[0].endDate %></p>
+                                <% } else { %>
+                                    <p>No work experience provided</p>
+                                <% } %>
+                            </div>
+                        </td>
+
+                        <!-- References -->
+                        <td>
+                            <div>
+                                <% if (application.references && application.references.length > 0) { %>
+                                    <p><strong>Name:</strong> <%= application.references[0].name %></p>
+                                    <p><strong>Relationship:</strong> <%= application.references[0].relationship %></p>
+                                    <p><strong>Phone Number:</strong> <%= application.references[0].phone %></p>
+                                <% } else { %>
+                                    <p>No references provided</p>
+                                <% } %>
+                            </div>
+                        </td>
+
+                        <td><%= application.question1 %></td>
+                        <td><%= application.question2 %></td>
+                        
+                        <!-- Delete Button -->
+                        <td>
+                            <form action="/delete/<%= application._id %>" method="POST">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+
+        
+    </div>
 </body>
 </html>
