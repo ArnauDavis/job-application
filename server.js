@@ -36,7 +36,7 @@ function formatDate(date) {
 }
 
 // Route to handle form submission
-
+/*
 app.post('/submit', async (req, res) => {
     const { firstName, lastName, email, phone, street, city, state, zip, unhoused, dob, question1, question2 } = req.body
 
@@ -79,7 +79,7 @@ app.post('/submit', async (req, res) => {
     await collection.insertOne(newApplication)
     res.send("Application submitted successfully.")
 });
-
+*/
 // Route to display applications in the admin panel
 app.get('/admin', async (req, res) => {
     try {
@@ -103,7 +103,7 @@ app.get('/admin', async (req, res) => {
 });
 
 // Route to delete an application
-
+/*
 app.post('/delete/:id', async (req, res) => {
     try {
         const { id } = req.params
@@ -194,7 +194,7 @@ app.get('/export', async (req, res) => {
         res.send('Error exporting applications')
     }
 })
-
+*/
 // Start the server
 app.listen(3000, function() {
     console.log('listening on 3000')
