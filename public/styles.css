@@ -30,6 +30,29 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* Image Styling */
+.header-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Logo Styling */
+.logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.logo img {
+    width: 150px; /* Adjust the logo size */
+    height: auto;
+}
+
 /* Table Styling */
 table {
     width: 100%; /* Make the table responsive and fit the page */
