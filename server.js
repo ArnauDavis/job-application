@@ -115,7 +115,7 @@ app.post('/delete/:id', async (req, res) => {
         res.send('Error deleting application')
     }
 });
-
+*/
 // Route to export data to Excel
 app.get('/export', async (req, res) => {
     try {
@@ -194,7 +194,7 @@ app.get('/export', async (req, res) => {
         res.send('Error exporting applications')
     }
 })
-*/
+
 // Start the server
 app.listen(3000, function() {
     console.log('listening on 3000')

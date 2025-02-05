@@ -19,6 +19,7 @@
         <table>
             <thead>
                 <tr>
+                    <th>Actions</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -33,12 +34,18 @@
                     <th>References</th>
                     <th>Motivation Question</th>
                     <th>Challenge Question</th>
-                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <% applications.forEach(application => { %>
+                    
                     <tr>
+                        <!-- Delete Button -->
+                    <td>
+                        <form action="/delete/<%= application._id %>" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
                         <td><%= application.firstName %></td>
                         <td><%= application.lastName %></td>
                         <td><%= application.email %></td>
@@ -79,12 +86,7 @@
                         <td><%= application.question1 %></td>
                         <td><%= application.question2 %></td>
                         
-                        <!-- Delete Button -->
-                        <td>
-                            <form action="/delete/<%= application._id %>" method="POST">
-                                <button type="submit">Delete</button>
-                            </form>
-                        </td>
+                        
                     </tr>
                 <% }) %>
             </tbody>
