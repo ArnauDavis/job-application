@@ -36,7 +36,7 @@ function formatDate(date) {
 }
 
 // Route to handle form submission
-
+/*
 app.post('/submit', async (req, res) => {
     const { firstName, lastName, email, phone, street, city, state, zip, unhoused, dob, question1, question2 } = req.body
 
@@ -79,7 +79,7 @@ app.post('/submit', async (req, res) => {
     await collection.insertOne(newApplication)
     res.send("Application submitted successfully.")
 });
-
+*/
 // Route to display applications in the admin panel
 app.get('/admin', async (req, res) => {
     try {
@@ -103,7 +103,7 @@ app.get('/admin', async (req, res) => {
 });
 
 // Route to delete an application
-
+/*
 app.post('/delete/:id', async (req, res) => {
     try {
         const { id } = req.params
@@ -115,7 +115,7 @@ app.post('/delete/:id', async (req, res) => {
         res.send('Error deleting application')
     }
 });
-
+*/
 // Route to export data to Excel
 app.get('/export', async (req, res) => {
     try {
