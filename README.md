@@ -32,7 +32,11 @@ This is still a work in progress! I will be adding some styling to the pages. I 
 I also want to add a login page to the admin page so that not just anyone with access to the link, can access the page and download the excel file. I could also use mongoose and have each form be a schema. I also could expand my files for organization
 *hint hint* MVC *hint hint*.
 
+I have since added styling, as well as a added a styled page to reflect that a form has been submitted successfully. Mongoose as also been added, every new application is a schema now. My original server.js file has been reduced dramatically by way of abstraction. MVC architecture has been introduced, which has made updating and debugging much easier that I expected, I especially enjoy the ease of disabling/enabling routes.
+
 ## Lessons Learned
 
 I learned how to look for Static Outbound IP Addresses and make sure they are whitelisted in my mongo db so that my hosted apps can access the database, I also added environmental variables from my env into my render project to ensure functionality.
-I got great practice working on the backend and establishing routes for everything, daily gratitude for express post.
+I got great practice working on the backend and establishing routes for everything, daily gratitude for express post. 
+
+While setting up my MVC build, I got to practice using module.exports/require('export') and require('../folder/file'), compartmentalizing all of my code blocks helped me understand better where each bit of logic should be stored. The added benefit of understanding this, is now, when I return to this project to make changes, I'll know where to go to make certain changes without having to remember how the entire project was built.
