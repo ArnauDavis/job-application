@@ -14,17 +14,12 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
-const uri = process.env.MONGODB_URI
-
 connectDB()
 
-app.use('/applications', applicationRoutes)
-
+app.use('/', applicationRoutes)
 app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, 'index.html'))
 })
-
-
 
 
 // Start the server
