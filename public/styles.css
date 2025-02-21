@@ -26,6 +26,18 @@ body {
     margin-top: 50px; /* Adjusted margin for the admin page */
 }
 
+.subCon{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.subCon button {
+    width: 160px;
+}
+
 /* Header Styling */
 h1 {
     text-align: center;
