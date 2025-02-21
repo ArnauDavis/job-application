@@ -22,7 +22,7 @@ I first had to format the date correctly because by default, the dates aren't or
 a schema. For example, I made the work experience and reference options an array and each submission an object, so if I wanted to add functionality to add another work experience or job reference, it would be simple to just repeat another 
 object with the same key value pairs. The party continues over into the admin page. Here you can see an organized view of all the responses currently stored in the database, these are all loaded into an ejs template, so there can be as many 
 of few submissions as desired and they don't all have to be hard coded. The admin page also has some other cool features, for example, you can delete submissions from the database with the 
-delete button. You can also download the current version of all the data as an excel sheet that will already have the data organized in the excel file. I even made sure to leave a space between submissions for readability.
+delete button. You can also download the current version of all the data as an excel sheet that will already have the data organized in the excel file.
 
 
 
