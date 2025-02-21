@@ -5,11 +5,6 @@ const connectDB = require('./config/database')
 const homeRoute = require('./routes/home')
 const applicationRoutes = require('./routes/applications')
 
-// Start the server
-app.listen(3000, function() {
-    console.log('listening on 3000')
-})
-
 
 app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')))
@@ -23,6 +18,13 @@ app.use('/', homeRoute)
 
 //I need to look into this, this feels wrong but I'm not sure why yet
 app.use('/', applicationRoutes)
+
+
+
+// Start the server
+app.listen(3000, function() {
+    console.log('listening on 3000')
+})
 
 
 
