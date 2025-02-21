@@ -1,19 +1,14 @@
 require('dotenv').config()
 const mongoose = require('mongoose');
 
-console.log(process.env.MONGO_URI)
+
 
 // Async function to connect to MongoDB
 const connectDB = async () => {
   try {
     // Connect to MongoDB using the URI from the environment variable
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useFindAndModify: false, // This option ensures that Mongoose doesn't use the deprecated findAndModify() method
-      useCreateIndex: true,    // To avoid deprecation warnings related to creating indexes
-    });
-
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {
+    })
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (err) {
     // If there's an error connecting to the database, log the error and exit the process

@@ -29,6 +29,7 @@ const getApplications = async (req, res) => {
 
 // Controller method to handle creating a new application
 const createApplication = async (req, res) => {
+    console.log(req.body);
     try {
       // Destructure the form data from the request body
       const { 
@@ -175,9 +176,9 @@ const exportApplicationsToExcel = async (req, res) => {
 }
   
   // Export the createApplication method so it can be used in routes
-  module.exports = { 
+  module.exports = {
+    getApplications, 
     createApplication,
-    getApplications,
     deleteApplication,
     exportApplicationsToExcel
  }

@@ -1,13 +1,13 @@
 const express = require('express')
 const router = express.Router()
-const { createApplication, getApplications, deleteApplication, exportApplicationsToExcel }  = require('../controllers/applications')
+const appController  = require('../controllers/applications')
 
-router.get('/admin', getApplications)
+router.get('/admin', appController.getApplications)
 
-router.post('/createApplication', createApplication)
+router.post('/createApplication', appController.createApplication)
 
-router.post('/delete/:id', deleteApplication)
+router.post('/delete/:id', appController.deleteApplication)
 
-router.get('/export', exportApplicationsToExcel)
+router.get('/export', appController.exportApplicationsToExcel)
 
 module.exports = router
