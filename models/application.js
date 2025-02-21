@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const applicationSchema = new mongoose.Schema({
   firstName: {
@@ -59,9 +59,9 @@ const applicationSchema = new mongoose.Schema({
     type: String,
     required: true,
   }
-});
+})
 
 // Create a Mongoose model for the application data
-const Application = mongoose.model('Application', applicationSchema);
+const Application = mongoose.model('Application', applicationSchema)
 
 module.exports = Application

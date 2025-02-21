@@ -1,6 +1,15 @@
 const Application = require('../models/application')
-const excelJS = require('exceljs');
+const excelJS = require('exceljs')
+const path = require('path')
 const { formatDate } = require('../utils/formatDate')
+
+
+
+// Controller for fetching applications and rendering the admin page
+const getForm = (req, res) => {
+  res.sendFile(path.join(__dirname, '../index.html'))
+}
+
 
 
 // Controller for fetching applications and rendering the admin page
@@ -17,19 +26,19 @@ const getApplications = async (req, res) => {
                 startDate: formatDate(exp.startDate),
                 endDate: formatDate(exp.endDate),
             }))
-        }));
+        }))
 
-        res.render('admin', { applications: formattedApplications }); // Pass the formatted applications to the admin view
+        res.render('admin', { applications: formattedApplications }) // Pass the formatted applications to the admin view
     } catch (error) {
-        console.error('Error fetching applications:', error);
-        res.send('Error fetching applications');
+        console.error('Error fetching applications:', error)
+        res.send('Error fetching applications')
     }
 }
 
 
 // Controller method to handle creating a new application
 const createApplication = async (req, res) => {
-    console.log(req.body);
+    
     try {
       // Destructure the form data from the request body
       const { 
@@ -45,7 +54,7 @@ const createApplication = async (req, res) => {
         dob, 
         question1, 
         question2 
-      } = req.body;
+      } = req.body
   
       // Work experience (assuming it's an array)
       const workExperience = [
@@ -54,7 +63,7 @@ const createApplication = async (req, res) => {
           startDate: req.body.startDate1,
           endDate: req.body.endDate1,
         },
-      ];
+      ]
   
       // References (assuming it's an array)
       const references = [
@@ -63,7 +72,7 @@ const createApplication = async (req, res) => {
           relationship: req.body.referenceRelation1,
           phone: req.body.referencePhone1,
         },
-      ];
+      ]
   
       // Create a new application using the Application model
       const newApplication = new Application({
@@ -81,16 +90,16 @@ const createApplication = async (req, res) => {
         references,
         question1,
         question2,
-      });
+      })
   
       // Save the new application to the database
-      await newApplication.save();  // Mongoose's save method
+      await newApplication.save()  
   
       // Send a response after the application is saved
-      res.send('Application submitted successfully.');
+      res.sendFile(path.join(__dirname, '../views/submittedPage.html'))
     } catch (err) {
-      console.error('Error submitting application:', err);
-      res.status(500).send('Server error');
+      console.error('Error submitting application:', err)
+      res.status(500).send('Server error')
     }
   }
 
@@ -98,16 +107,16 @@ const createApplication = async (req, res) => {
   // Controller for deleting an application by ID
 const deleteApplication = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { id } = req.params
 
         // Use Mongoose's findByIdAndDelete method to delete the application
-        await Application.findByIdAndDelete(id);
+        await Application.findByIdAndDelete(id)
 
-        console.log('Deleted application with id:', id);  // Log the deleted application ID
+        console.log('Deleted application with id:', id)  // Log the deleted application ID
         res.redirect('/admin');  // Redirect back to the admin panel after deletion
     } catch (error) {
-        console.error('Error deleting application:', error);
-        res.send('Error deleting application');
+        console.error('Error deleting application:', error)
+        res.send('Error deleting application')
     }
 }
 
@@ -115,10 +124,10 @@ const deleteApplication = async (req, res) => {
 // Controller for exporting applications to Excel
 const exportApplicationsToExcel = async (req, res) => {
     try {
-        const applications = await Application.find();  // Fetch all applications
+        const applications = await Application.find()  // Fetch all applications
 
-        const workbook = new excelJS.Workbook();
-        const worksheet = workbook.addWorksheet('applications');
+        const workbook = new excelJS.Workbook()
+        const worksheet = workbook.addWorksheet('applications')
 
         worksheet.columns = [
             { header: 'First Name', key: 'firstName' },
@@ -135,16 +144,16 @@ const exportApplicationsToExcel = async (req, res) => {
             { header: 'References', key: 'references' },
             { header: 'Motivation Question', key: 'question1' },
             { header: 'Challenge Question', key: 'question2' }
-        ];
+        ]
 
         applications.forEach(app => {
             const workExpString = app.workExperience.map(exp => 
                 `${exp.company} (Start: ${formatDate(exp.startDate)}, End: ${formatDate(exp.endDate)}, Current: ${exp.currentJob ? 'Yes' : 'No'})`
-            ).join('; ');
+            ).join('; ')
 
             const refsString = app.references.map(ref => 
                 `${ref.name} (Relationship: ${ref.relationship}, Phone: ${ref.phone})`
-            ).join('; ');
+            ).join('; ')
 
             worksheet.addRow({
                 firstName: app.firstName,
@@ -161,22 +170,23 @@ const exportApplicationsToExcel = async (req, res) => {
                 references: refsString,
                 question1: app.question1,
                 question2: app.question2
-            });
-            worksheet.addRow([]); // Add an empty row between applications
-        });
+            })
+            worksheet.addRow([]) // Add an empty row between applications
+        })
 
-        res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-        res.setHeader('Content-Disposition', 'attachment; filename=applications.xlsx');
-        await workbook.xlsx.write(res);
-        res.end();
+        res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+        res.setHeader('Content-Disposition', 'attachment; filename=applications.xlsx')
+        await workbook.xlsx.write(res)
+        res.end()
     } catch (error) {
-        console.error('Error exporting applications:', error);
-        res.send('Error exporting applications');
+        console.error('Error exporting applications:', error)
+        res.send('Error exporting applications')
     }
 }
   
   // Export the createApplication method so it can be used in routes
   module.exports = {
+    getForm,
     getApplications, 
     createApplication,
     deleteApplication,
