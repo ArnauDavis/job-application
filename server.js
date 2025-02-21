@@ -20,6 +20,8 @@ app.use(express.json())
 connectDB()
 
 app.use('/', homeRoute)
+
+//I need to look into this, this feels wrong but I'm not sure why yet
 app.use('/', applicationRoutes)
 
 
