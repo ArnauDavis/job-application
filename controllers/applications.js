@@ -5,7 +5,7 @@ const { formatDate } = require('../utils/formatDate')
 
 
 
-// Controller for fetching applications and rendering the admin page
+// Controller for loading home page
 const getForm = (req, res) => {
   res.sendFile(path.join(__dirname, '../index.html'))
 }
