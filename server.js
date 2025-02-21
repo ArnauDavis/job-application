@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const connectDB = require('./config/database')
+const homeRoute = require('./routes/home')
 const applicationRoutes = require('./routes/applications')
 
 // Start the server
@@ -18,6 +19,7 @@ app.use(express.json())
 
 connectDB()
 
+app.use('/', homeRoute)
 app.use('/', applicationRoutes)
 
 

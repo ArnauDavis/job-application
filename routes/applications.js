@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 const appController  = require('../controllers/applications')
 
-router.get('/', appController.getForm)
 
 router.get('/admin', appController.getApplications)
 
