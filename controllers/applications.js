@@ -1,14 +1,6 @@
 const Application = require('../models/application')
 const excelJS = require('exceljs')
-const path = require('path')
 const { formatDate } = require('../utils/formatDate')
-
-
-
-// Controller for loading home page
-const getForm = (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html'))
-}
 
 
 
@@ -184,9 +176,8 @@ const exportApplicationsToExcel = async (req, res) => {
     }
 }
   
-  // Export the createApplication method so it can be used in routes
+  // Export methods so they can be used in routes
   module.exports = {
-    getForm,
     getApplications, 
     createApplication,
     deleteApplication,
