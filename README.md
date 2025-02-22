@@ -9,8 +9,8 @@ you can export everything to a neat Excel file and even delete entries as needed
 **Link to admin page:** https://job-application-3lj4.onrender.com/admin
 
 
-<div style="height: 200px; overflow: hidden;">
-    <img src="job-app-gif.gif" style="height: auto; width: 100%; object-fit: cover; transform: translateY(-30px);" alt="shadow-gif"/>
+<div style="height: 400px; overflow: hidden;">
+    <img src="job-app-gif.gif" style="height: 300px; width: 100%; object-fit: cover; transform: translateY(-30px);" alt="shadow-gif"/>
 </div>
 
 
