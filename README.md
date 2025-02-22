@@ -10,7 +10,7 @@ you can export everything to a neat Excel file and even delete entries as needed
 
 
 <div style="height: 400px; overflow: hidden;">
-    <img src="job-app-gif.gif" style="height: 280px; width: 100%; object-fit: cover; transform: translateY(-30px);" alt="shadow-gif"/>
+    <img src="job-app-gif.gif" style="height: 30vh; width: 100%; object-fit: cover; transform: translateY(-30px);" alt="shadow-gif"/>
 </div>
 
 
