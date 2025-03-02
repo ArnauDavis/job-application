@@ -29,7 +29,7 @@
             <input type="email" id="email" name="email" placeholder="Enter your email">
 
             <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
             <label for="address">Address</label>
             <div id="address">
@@ -46,7 +46,7 @@
                 <input type="text" id="zip" name="zip" placeholder="Enter your zip code">
 
                 <label for="unhoused">Are you currently unhoused?</label>
-                <select id="unhoused" name="unhoused" required>
+                <select id="unhoused" name="unhoused">
                     <option value="" disabled selected>Select an option</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
@@ -59,25 +59,29 @@
             <label for="experience">Past Work Experience:</label>
             <div id="workExperience">
                 <div class="workEntry">
-                    <input type="text" placeholder="Company" name="company1" class="companyName" required>
-                    <input type="date" name="startDate1" class="startDate" required>
+                    <input type="text" placeholder="Company" name="company1" class="companyName">
+                    <input type="date" name="startDate1" class="startDate">
                     <input type="date" name="endDate1" class="endDate">
             </div>
 
             <label for="references">Reference (Name, Relationship, Phone Number):</label>
             <div id="references">
                 <div class="referenceEntry">
-                    <input type="text" placeholder="Reference Name" name="referenceName1" required>
-                    <input type="text" placeholder="Relationship" name="referenceRelation1" required>
-                    <input type="tel" placeholder="Phone Number" name="referencePhone1" required>
+                    <input type="text" placeholder="Reference Name" name="referenceName1">
+                    <input type="text" placeholder="Relationship" name="referenceRelation1">
+                    <input type="tel" placeholder="Phone Number" name="referencePhone1">
                 </div>
             </div>
 
             <label for="question1">1. What motivates you to apply for this position and how does it align with your personal or professional goals?</label>
-            <textarea id="question1" name="question1" rows="3" required></textarea>
+            <textarea id="question1" name="question1" rows="3"></textarea>
 
             <label for="question2">2. Describe a challenge you've faced in your professional or personal life and how you overcame it.</label>
-            <textarea id="question2" name="question2" rows="3" required></textarea>
+            <textarea id="question2" name="question2" rows="3"></textarea>
+            
+            <label for="question3">3. How did you hear about us?</label>
+            <textarea id="question3" name="question3" rows="3"></textarea>
+
 
             <button type="submit">Submit Application</button>
         </form>

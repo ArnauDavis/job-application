@@ -1,7 +1,7 @@
 const Application = require('../models/application')
 const excelJS = require('exceljs')
 const { formatDate } = require('../utils/formatDate')
-
+const path = require('path')
 
 
 // Controller for fetching applications and rendering the admin page
@@ -45,7 +45,8 @@ const createApplication = async (req, res) => {
         unhoused, 
         dob, 
         question1, 
-        question2 
+        question2,
+        question3 
       } = req.body
   
       // Work experience (assuming it's an array)
@@ -82,6 +83,7 @@ const createApplication = async (req, res) => {
         references,
         question1,
         question2,
+        question3
       })
   
       // Save the new application to the database
@@ -135,7 +137,8 @@ const exportApplicationsToExcel = async (req, res) => {
             { header: 'Work Experience', key: 'workExperience' },
             { header: 'References', key: 'references' },
             { header: 'Motivation Question', key: 'question1' },
-            { header: 'Challenge Question', key: 'question2' }
+            { header: 'Challenge Question', key: 'question2' },
+            { header: 'How Did You Hear About Us', key: 'question3' }
         ]
 
         applications.forEach(app => {
@@ -161,7 +164,8 @@ const exportApplicationsToExcel = async (req, res) => {
                 workExperience: workExpString,
                 references: refsString,
                 question1: app.question1,
-                question2: app.question2
+                question2: app.question2,
+                question3: app.question3
             })
             worksheet.addRow([]) // Add an empty row between applications
         })

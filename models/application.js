@@ -11,31 +11,31 @@ const applicationSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: true,
+    required: false,
   },
   phone: {
     type: String,
-    required: true,
+    required: false,
   },
   street: {
     type: String,
-    required: true,
+    required: false,
   },
   city: {
     type: String,
-    required: true,
+    required: false,
   },
   state: {
     type: String,
-    required: true,
+    required: false,
   },
   zip: {
     type: String,
-    required: true,
+    required: false,
   },
   unhoused: {
     type: Boolean,
-    required: true,
+    required: false,
   },
   dob: {
     type: Date,
@@ -53,12 +53,17 @@ const applicationSchema = new mongoose.Schema({
   }],
   question1: {
     type: String,
-    required: true,
+    required: false,
   },
   question2: {
     type: String,
+    required: false,
+  },
+  question3: {
+    type: String,
     required: true,
   }
+
 })
 
 // Create a Mongoose model for the application data
