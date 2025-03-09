@@ -40,7 +40,7 @@ const createApplication = async (req, res) => {
         phone, 
         street, 
         city, 
-        state, 
+        states, 
         zip, 
         unhoused, 
         dob, 
@@ -48,7 +48,7 @@ const createApplication = async (req, res) => {
         question2,
         question3 
       } = req.body
-      console.log(req.body)
+      
   
       // Work experience (assuming it's an array)
       const workExperience = [
@@ -76,7 +76,7 @@ const createApplication = async (req, res) => {
         phone,
         street,
         city,
-        state,
+        state: states,
         zip,
         unhoused,
         dob,
