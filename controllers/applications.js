@@ -48,6 +48,7 @@ const createApplication = async (req, res) => {
         question2,
         question3 
       } = req.body
+      console.log(req.body)
   
       // Work experience (assuming it's an array)
       const workExperience = [

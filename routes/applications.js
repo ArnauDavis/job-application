@@ -5,9 +5,9 @@ const appController  = require('../controllers/applications')
 
 router.get('/admin', appController.getApplications)
 
-//router.post('/createApplication', appController.createApplication)
+router.post('/createApplication', appController.createApplication)
 
-//router.post('/delete/:id', appController.deleteApplication)
+router.post('/delete/:id', appController.deleteApplication)
 
 router.get('/export', appController.exportApplicationsToExcel)
 
