@@ -1,6 +1,6 @@
 setTimeout(() => {
     window.location.href = '/'
-  }, 300000)
+  }, 30900)
 
 
   const FULL_DASH_ARRAY = 283;
@@ -21,7 +21,8 @@ const COLOR_CODES = {
   }
 };
 
-const TIME_LIMIT = 20;
+//how to set time
+const TIME_LIMIT = 30;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = null;
@@ -81,7 +82,7 @@ function formatTime(time) {
     seconds = `0${seconds}`;
   }
 
-  return `${minutes}:${seconds}`;
+  return `Reloading in ${minutes}:${seconds}`;
 }
 
 function setRemainingPathColor(timeLeft) {
