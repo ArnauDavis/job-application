@@ -92,6 +92,10 @@ const createApplication = async (req, res) => {
   
       // Send a response after the application is saved
       res.sendFile(path.join(__dirname, '../views/submittedPage.html'))
+
+      setTimeout(() => {
+        res.redirect('/')
+      }, 3000)
     } catch (err) {
       console.error('Error submitting application:', err)
       res.status(500).send('Server error')
