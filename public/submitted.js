@@ -1,3 +1,14 @@
+let homeBut = document.querySelector('button')
+
+homeBut.addEventListener('click',rezet)
+
+function rezet(){
+  window.location.href = '/'
+}
+
+
+
+//resets to home page after 30.9 seconds
 setTimeout(() => {
     window.location.href = '/'
   }, 30900)
